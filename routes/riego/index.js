@@ -26,7 +26,7 @@ riegoMedicion.get('/:idValvula/todas', function(req, res) {
 });
 
 //Espera recibir por parámetro un id de dispositivo y un valor de medición y lo inserta en base de datos.
-riegoMedicion.post('/agregar', function(req, res) {
+riegoMedicion.post('/', function(req, res) {
     pool.query('Insert into Log_riegos (apertura,fecha,electrovalvulaid) VALUES ($1, $2, $3)', [req.body.apertura, req.body.fecha, req.body.electrovalvulaid], function(err, result, fields) {
         if (err) {
             console.log(err);
