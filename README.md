@@ -17,3 +17,5 @@ host: localhost
 database: postgres
 password: password
 port: 5432
+
+Para crear y agregar datos para las pruebas se puede usar el script db_init.sql, el mismo se puede correr desde un cliente sql, en mi caso use el dbeaver v22.0.3
