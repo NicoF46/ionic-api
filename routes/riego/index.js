@@ -33,7 +33,7 @@ riegoMedicion.post('/', function(req, res) {
             res.send(err).status(400);
             return;
         }
-        res.send(result);
+        res.send();
     });
 });
 

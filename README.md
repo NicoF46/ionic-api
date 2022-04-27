@@ -19,3 +19,47 @@ password: password
 port: 5432
 
 Para crear y agregar datos para las pruebas se puede usar el script db_init.sql, el mismo se puede correr desde un cliente sql, en mi caso use el dbeaver v22.0.3
+
+## Endpoints
+
+# Listado de dispositivos
+
+curl --location --request GET 'http://localhost:3000/api/dispositivo/'
+
+# Listado de mediciones
+
+curl --location --request GET 'http://localhost:3000/api/medicion/1/todas'
+
+# Ultima medicion
+
+curl --location --request GET 'http://localhost:3000/api/medicion/1'
+
+# Generar medicion
+
+curl --location --request POST 'http://localhost:3000/api/riego/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "apertura": 19,
+    "fecha": "2022-04-26T21:07:20-03:00",
+    "electrovalvulaid": 1
+}'
+
+# Listado de logs de riego
+
+curl --location --request GET 'http://localhost:3000/api/riego/1/todas'
+
+# Ultimo log de riego
+
+curl --location --request GET 'http://localhost:3000/api/riego/1'
+
+# Generar log de riego
+
+curl --location --request POST 'http://localhost:3000/api/medicion/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "valor": "100",
+    "fecha": "2022-04-26T21:07:20-03:00",
+    "dispositivoid": 1
+}'
+
+
