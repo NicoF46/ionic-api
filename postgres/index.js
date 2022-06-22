@@ -2,7 +2,7 @@ var Pool = require('pg').Pool
 var pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'postgres',
+  database: 'iot_meters_db',
   password: 'password',
   port: 5432,
 })
